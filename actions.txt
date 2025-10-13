@@ -1,0 +1,114 @@
+reply_markup: {
+  keyboard: [ // Tugmalar joylashuvi
+    [
+      { text: "📞 Телефон yuborish", request_contact: true },
+      { text: "📍 Joylashuv yuborish", request_location: true }
+    ],
+    [
+      { text: "ℹ️ Ma'lumot" }
+    ]
+  ],
+  resize_keyboard: true,     // Ekran o‘lchamiga moslashadi
+  one_time_keyboard: true,   // Bir marta bosilgandan so‘ng yo‘qoladi
+  selective: true,           // Faqat ma’lum foydalanuvchilarga ko‘rsatadi
+  input_field_placeholder: "Tanlang..." // Kirish maydonida yozuv chiqadi
+}
+
+
+
+Child property’lari:
+
+keyboard → KeyboardButton[][] (massiv ichida massiv)
+
+resize_keyboard → boolean
+
+one_time_keyboard → boolean
+
+selective → boolean
+
+input_field_placeholder → string
+
+KeyboardButton esa:
+
+{
+  text: "Tugma matni",
+  request_contact: true,   // Foydalanuvchi kontaktini yuboradi
+  request_location: true,  // Geolokatsiyani yuboradi
+  request_poll: { type: "quiz" | "regular" } // So‘rov yuborish
+}
+
+
+
+
+
+reply_markup: {
+  inline_keyboard: [
+    [
+      { text: "🌐 Saytga kirish", url: "https://example.com" },
+      { text: "📩 Yuborish", callback_data: "send_info" }
+    ],
+    [
+      { text: "📊 Natijani ko‘rish", callback_data: "show_result" }
+    ]
+  ]
+}
+
+
+Child property’lari:
+
+inline_keyboard → InlineKeyboardButton[][]
+
+InlineKeyboardButton esa:
+
+{
+  text: "Tugma matni",
+  url: "https://example.com",        // Tashqi havola
+  callback_data: "data_identifier",  // Botga qaytadigan ma’lumot
+  web_app: { url: "https://app.example.com" }, // Telegram Web App ochish
+  login_url: { url: "https://login.example.com" }, // Login URL
+  switch_inline_query: "query",      // Inline rejimni ishga tushiradi
+  switch_inline_query_current_chat: "query",
+  pay: true                          // To‘lov uchun tugma (bot pay-rejimda bo‘lsa)
+}
+
+
+
+
+
+reply_markup: {
+  remove_keyboard: true,
+  selective: true // Faqat ayrim foydalanuvchilar uchun
+}
+
+
+
+
+Bot foydalanuvchidan javob yozishni majburlaydi (reply holatida).
+
+reply_markup: {
+  force_reply: true,
+  input_field_placeholder: "Iltimos, javob yozing...",
+  selective: true
+}
+
+
+
+msg.chat.
+
+{
+  id: 6080018622,               // 🔹 Chat ID (asosiy identifikator)
+  first_name: "Muxlisa",        // 🔹 Foydalanuvchining ismi
+  last_name: "Aminova",         // 🔹 Familiyasi (bo‘lmasligi mumkin)
+  username: "muxlisa_dev",      // 🔹 Telegram username (@belgili)
+  type: "private",              // 🔹 Chat turi (private / group / supergroup / channel)
+  bio: "Backend developer",     // 🔹 (faqat ayrim holatlarda)
+  photo: {                      // 🔹 Profil rasmi (agar so‘ralgan bo‘lsa)
+    small_file_id: "...",
+    big_file_id: "..."
+  }
+}
+
+
+
+
+
