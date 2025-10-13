@@ -29,7 +29,7 @@ bot.onText("/help", (msg) => {
   bot.sendMessage(msg.chat.id, "nima yordam kerak ?");
 });
 
-
+//new
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
   const name = msg.from.first_name;
