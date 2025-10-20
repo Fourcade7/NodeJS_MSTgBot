@@ -29,13 +29,18 @@
 
 
 
-docker ps
-docker ps -a
+            docker ps
+            docker ps -a
+            
+            
+            
+            docker stop myapp-container
+            docker start myapp-container
+            docker logs myapp-container
+            docker rm myapp
+            docker rmi tgimage
 
 
 
-docker stop myapp-container
-docker start myapp-container
-docker logs myapp-container
-docker rm myapp
-docker rmi tgimage
+
+            
